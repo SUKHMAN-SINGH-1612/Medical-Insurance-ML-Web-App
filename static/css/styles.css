@@ -1,0 +1,277 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+
+/* Hero Section with Typing Animation */
+.hero {
+    background-color: #005792;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden; /* Ensures the content doesn't go outside the bounds */
+}
+
+#typingText {
+    font-size: 24px;
+    display: inline-block; /* Ensures text aligns to the center properly */
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid white; /* Typewriter cursor as a solid white line */
+    animation: typing 3.5s steps(40, end) 1s forwards, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 32%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: white; } /* Ensures the cursor is visible against the background */
+}
+
+/* Form Styling */
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.2);
+    border-radius: 8px;
+}
+
+form label {
+    margin-top: 10px;
+    display: block;
+    color: #333;
+}
+
+input[type="number"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+/* Inline Radio Buttons */
+.radio-group {
+    display: flex;
+    justify-content: space-around;
+    margin: 4px 0px 0px 4px;
+}
+
+input[type="radio"] {
+    margin: 0 4px;
+    margin-left: 0px;  /* Spacing for touch friendliness */
+}
+
+/* BMI Display Styling */
+#bmiDisplay {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f2f2f2; /* Light grey background for contrast */
+    border-radius: 8px; /* Rounded corners */
+    border: 2px solid #005792; /* Blue border for visual appeal */
+    color: #005792; /* Color for the text to match the border */
+    font-size: 18px; /* Larger text for better readability */
+    text-align: center; /* Centered text */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Soft shadow for 3D effect */
+    transition: all 0.3s ease-in-out; /* Smooth transition for any changes */
+}
+
+/* Enhancing visual feedback for BMI results */
+#bmiDisplay.good {
+    background-color: #d4edda; /* Greenish background for good BMI range */
+    color: #155724; /* Dark green text */
+    border-color: #c3e6cb; /* Light green border */
+}
+
+#bmiDisplay.overweight {
+    background-color: #fff3cd; /* Yellowish background for overweight warning */
+    color: #856404; /* Brownish text */
+    border-color: #ffeeba; /* Light yellow border */
+}
+
+#bmiDisplay.underweight {
+    background-color: #f8d7da; /* Pink background for underweight warning */
+    color: #721c24; /* Dark red text */
+    border-color: #f5c6cb; /* Light pink border */
+}
+
+
+/* Animated Button */
+button {
+    width: 100%;
+    background-color: #008080;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -100%;
+    bottom: 0;
+    left: 0;
+    background-color: #004c4c;
+    z-index: 0;
+    transition: right 0.4s ease;
+}
+
+button:hover::before {
+    right: 0;
+}
+
+button span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Card Styling for FAQ, About Us, Reviews */
+.card {
+    background: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #002c3e;
+    color: #ffffff;
+}
+
+#progressBarContainer {
+    width: 100%;
+    background-color: #eee;
+    border-radius: 13px;
+    margin: 20px 0;
+}
+
+#progressBar {
+    height: 20px;
+    background-color: #4CAF50;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    border-radius: 13px;
+    transition: width 0.4s ease-in-out;
+}
+
+/* Toggle Switch Style */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+
+  .btn-control {
+    background-color: #4CAF50; /* Green background for buttons */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 5px 20px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-control:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.result-display {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.result-display h3 {
+    color: #005792;
+}
+
+.result-display p {
+    font-size: 16px;
+    color: #666;
+}
+
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    form {
+        width: 50%;
+        margin: 20px auto; }
+
+}
