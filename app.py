@@ -3,7 +3,6 @@ import pickle
 import numpy as np
 
 app = Flask(__name__)
-app.debug = False
 
 # Load the machine learning model
 model_path = 'random-forest-model.pkl'
