@@ -11,5 +11,8 @@
             "src": "/(.*)",
             "dest": "app.py"
         }
-    ]
+    ],
+    "engines": {
+        "python": "3.11"
+    }
 }
